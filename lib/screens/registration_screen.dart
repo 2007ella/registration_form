@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:registration_form/screens/details_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   @override
@@ -60,6 +61,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
               
             ),
+            SizedBox(height: 48,),
+            if(isRegistered)
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context)
+              =>DetailsScreen(
+                firstName:firstNameController.text,
+                lastName: lastNameController.text,
+                email: emailController.text,
+              )
+              ));
+
+            },
+            child: Text("view registration details"),
+            )
             
           ],
         ),
